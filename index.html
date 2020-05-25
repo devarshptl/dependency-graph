@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dependency Graph</title>
+    <style>
+        .out-wrap {
+            height: 100%;
+            width: 100%;
+            overflow: scroll;
+            border: 1px solid black;
+            position: absolute;
+        }
+
+        .out-wrap::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2 style="margin: 0px">Dependency Graph</h2>
+        <div class="out-wrap">
+            <div style="width: fit-content;background-color: red;">
+                <div id="graph"></div>
+            </div>
+        </div>
+    
+    </div>
+    <!-- <script src="./functions.js"></script> -->
+    <!-- <script src="https://agraph.herokuapp.com/dependency-graph"></script> -->
+    <script src="./dependency_graph.js"></script>
+    <script>
+        var root = [
+            { 'id': 1, 'text': 'table_1', 'link': [18], 'shape': 'table'},            
+            { 'id': 2, 'text': 'table_2', 'link': [18], 'shape': 'table'},
+            { 'id': 3, 'text': 'table_3', 'link': [18], 'shape': 'table'},
+            { 'id': 4, 'text': 'table_4', 'link': [18], 'shape': 'table'},
+            { 'id': 5, 'text': 'table_5', 'link': [18], 'shape': 'table'},
+            { 'id': 6, 'text': 'table_6', 'link': [18], 'shape': 'table'},
+            { 'id': 7, 'text': 'table_7', 'link': [19], 'shape': 'table'},
+            { 'id': 8, 'text': 'table_8', 'link': [19], 'shape': 'table'},
+            { 'id': 9, 'text': 'table_9', 'link': [19], 'shape': 'table'},
+            { 'id': 10, 'text': 'table_10', 'link': [19], 'shape': 'table'},
+            { 'id': 11, 'text': 'table_11', 'link': [20], 'shape': 'table'},
+            { 'id': 12, 'text': 'table_12', 'link': [20], 'shape': 'table'},
+            { 'id': 13, 'text': 'table_13', 'link': [20], 'shape': 'table'},
+            { 'id': 14, 'text': 'table_14', 'link': [20], 'shape': 'table'},
+            { 'id': 15, 'text': 'table_15', 'link': [20], 'shape': 'table'},
+            { 'id': 16, 'text': 'table_16', 'link': [22], 'shape': 'table'},
+            { 'id': 17, 'text': 'table_17', 'link': [22], 'shape': 'table'},
+            { 'id': 18, 'text': 'query_1', 'link': [21], 'shape': 'query'},
+            { 'id': 19, 'text': 'query_2', 'link': [21], 'shape': 'query'},
+            { 'id': 20, 'text': 'query_3', 'link': [21], 'shape': 'query'},
+            { 'id': 21, 'text': 'query_4', 'link': [22], 'shape': 'query'},
+            { 'id': 22, 'text': 'final_query', 'link': [null], 'shape': 'final_query'},
+        ];
+        var graph2 = new DependencyGraph('graph', 60, root);
+    </script>
+</body>
+</html>
